@@ -1,0 +1,14 @@
+{
+  "name": "ventnor",
+  "version": "0.1.0",
+  "description": "",
+  "main": "view.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Ben Gourley",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "hat": "0.0.3"
+  }
+}
