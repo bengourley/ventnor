@@ -1,6 +1,9 @@
 {
   "name": "ventnor",
   "version": "0.1.0",
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
+  },
   "description": "",
   "main": "view.js",
   "scripts": {
