@@ -59,13 +59,13 @@ View.prototype.remove = function () {
     this._views.viewIds[key].remove()
   }.bind(this))
 
+  // Alert listeners that this view has been removed
+  this.emit('remove')
+
   this.removeAllListeners()
   this.stopListening()
   this.stopDomListening()
   this.$el.remove()
-
-  // Alert listeners that this view has been removed
-  this.emit('remove')
 
 }
 
