@@ -76,7 +76,12 @@ View.prototype.remove = function () {
   this.removeAllListeners()
   this.stopListening()
   this.stopDomListening()
-  this.$el.remove()
+
+  if (this.$el) {
+    this.$el.remove()
+  } else {
+    if (this.el.parentNode) this.el.parentNode.removeChild(this.el)
+  }
 
 }
 

@@ -1,0 +1,16 @@
+ui: mocha-bdd
+browsers:
+  - name: chrome
+    version: 34..latest
+  - name: firefox
+    version: 28..latest
+  - name: ie
+    version: 8..latest
+  - name: iphone
+    version: 5.0..latest
+  - name: ipad
+    version: 5.0..latest
+scripts:
+  - "/test/vendor/jquery.js"
+  - "/node_modules/es5-shim/es5-shim.js"
+  - "/node_modules/es5-shim/es5-sham.js"

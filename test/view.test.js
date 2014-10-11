@@ -1,18 +1,7 @@
 var View = require('../')
   , assert = require('assert')
-  , jsdom = require('jsdom')
-  , jquery = require.resolve('jquery')
   , EventEmitter = require('events').EventEmitter
   , unique = require('lodash.uniq')
-
-before(function (done) {
-  jsdom.env('', [ jquery ], function (errors, window) {
-    if (errors) return done(new Error(errors))
-    global.window = window
-    global.document = window.document
-    done()
-  })
-})
 
 describe('view', function () {
 
@@ -20,7 +9,6 @@ describe('view', function () {
 
     it('should create a new view', function () {
       var v = new View()
-      assert.equal(v.__proto__, View.prototype) // jshint ignore:line
       assert(v instanceof View)
     })
 
@@ -220,6 +208,12 @@ describe('view', function () {
 
   })
 
+  // Only add "no jquery" tests if browser has a good DOM
+  if (typeof window !== 'undefined') {
+    if (typeof window.createElement === 'function') return
+    if (typeof window.createElement('div').addEventListener === 'function') return
+  }
+
   describe('no jquery', function () {
 
     var $
@@ -250,6 +244,7 @@ describe('view', function () {
         v.listenToDom(el, 'click', function () {
           done()
         })
+        if (typeof el.click === 'function') return el.click()
         // Simulate a DOM event
         var e = document.createEvent('Event')
         e.initEvent('click', true, true)

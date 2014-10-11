@@ -4,16 +4,16 @@
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "http://github.com/bengourley/ventnor.git"
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/bengourley/ventnor.git"
   },
   "description": "",
   "main": "view.js",
   "scripts": {
     "lint": "jshint . --reporter=./node_modules/jshint-full-path/index.js",
     "pretest": "npm run-script lint",
-    "test": "istanbul cover ./node_modules/.bin/_mocha -- -R spec",
+    "test": "istanbul cover ./node_modules/.bin/_mocha -- -R spec test/simulate-browser-env",
     "posttest": "istanbul check-coverage && rm -rf coverage",
     "prepublish": "npm test && npm prune"
   },
@@ -23,12 +23,14 @@
     "hat": "0.0.3"
   },
   "devDependencies": {
+    "es5-shim": "^4.0.3",
     "istanbul": "^0.3.2",
     "jquery": "^2.1.1",
     "jsdom": "^1.0.1",
     "jshint": "^2.5.6",
     "jshint-full-path": "^1.1.1",
     "lodash.uniq": "^2.4.1",
-    "mocha": "^1.21.5"
+    "mocha": "^1.21.5",
+    "zuul": "^1.11.2"
   }
 }
