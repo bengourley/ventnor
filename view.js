@@ -6,7 +6,8 @@ var EventEmitter = require('events').EventEmitter
 function View(serviceLocator) {
   EventEmitter.apply(this)
   this.serviceLocator = serviceLocator
-  this.$el = this.$el || $('<div>')
+  this.el = this.el || document.createElement('div')
+  if (window.$) this.$el = this.$el || window.$(this.el)
   this._listeners = []
   this._domListeners = []
   this._views = { viewIds: {}, modelIds: {} }
@@ -26,9 +27,13 @@ View.prototype.listenTo = function (obj, event, fn) {
 /*
  * Listen to an event on the provided object
  */
-View.prototype.listenToDom = function ($el, event, fn) {
-  this._domListeners.push({ $el: $el, event: event, fn: fn })
-  $el.on(event, fn)
+View.prototype.listenToDom = function (el, event, fn) {
+  this._domListeners.push({ el: el, event: event, fn: fn })
+  if (window.$) {
+    window.$(el).on(event, fn)
+  } else {
+    el.addEventListener(event, fn)
+  }
 }
 
 /*
@@ -38,6 +43,7 @@ View.prototype.stopListening = function () {
   this._listeners.forEach(function (listener) {
     listener.obj.removeListener(listener.event, listener.fn)
   }.bind(this))
+  this._listeners = []
 }
 
 /*
@@ -45,8 +51,13 @@ View.prototype.stopListening = function () {
  */
 View.prototype.stopDomListening = function () {
   this._domListeners.forEach(function (listener) {
-    listener.$el.off(listener.event, listener.fn)
+    if (window.$) {
+      window.$(listener.el).off(listener.event, listener.fn)
+    } else {
+      listener.el.removeEventListener(listener.event, listener.fn)
+    }
   }.bind(this))
+  this._domListeners = []
 }
 
 /*

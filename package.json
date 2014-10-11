@@ -4,14 +4,31 @@
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
   },
+  "repository" : {
+    "type" : "git",
+    "url" : "http://github.com/bengourley/ventnor.git"
+  },
   "description": "",
   "main": "view.js",
   "scripts": {
-    "test": "npm test"
+    "lint": "jshint . --reporter=./node_modules/jshint-full-path/index.js",
+    "pretest": "npm run-script lint",
+    "test": "istanbul cover ./node_modules/.bin/_mocha -- -R spec",
+    "posttest": "istanbul check-coverage && rm -rf coverage",
+    "prepublish": "npm test && npm prune"
   },
   "author": "Ben Gourley",
-  "license": "BSD-2-Clause",
+  "license": "ISC",
   "dependencies": {
     "hat": "0.0.3"
+  },
+  "devDependencies": {
+    "istanbul": "^0.3.2",
+    "jquery": "^2.1.1",
+    "jsdom": "^1.0.1",
+    "jshint": "^2.5.6",
+    "jshint-full-path": "^1.1.1",
+    "lodash.uniq": "^2.4.1",
+    "mocha": "^1.21.5"
   }
 }
