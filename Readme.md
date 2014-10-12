@@ -22,7 +22,7 @@ npm install --save ventnor
 
 ## API
 
-# Constructor
+### Constructor
 
 This is how you instantiate the base view. This isn't particularly useful though, normally you'd want
 to extend it. See the [Extending Ventnor](#extending-ventnor-for-your-own-views) section.
