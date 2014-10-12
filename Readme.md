@@ -176,7 +176,7 @@ var models = [ /* an array of Merstone models! */]
 
 models.forEach(function (model) {
   listItem = new ListItemView(serviceLocator, model)
-  document.getElementById('#item-list')[0].appendChild(listItem.render().el)
+  document.getElementById('#item-list').appendChild(listItem.render().el)
 })
 
 // The document might now look something like this:
