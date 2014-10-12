@@ -74,7 +74,7 @@ Removes all event listeners bound with `v.listenTo()`.
 
 Removes all event listeners bound with `v.listenToDom()`.
 
-#### v.attachView(view)
+#### v.attachView(Object: view)
 
 Attaches the given `view` such that when the view `v` is removed, any attached views
 are also removed. This function is for managing the lifecycle of nested views and
