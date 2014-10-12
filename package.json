@@ -8,7 +8,7 @@
     "type": "git",
     "url": "http://github.com/bengourley/ventnor.git"
   },
-  "description": "",
+  "description": "A base class for browser views",
   "main": "view.js",
   "scripts": {
     "lint": "jshint . --reporter=./node_modules/jshint-full-path/index.js",
