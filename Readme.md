@@ -39,7 +39,7 @@ The constructor creates the following public properties on the view instance:
 
 #### v.serviceLocator
 
-Whatever was passed as the first argument to the contructor.
+Whatever was passed as the first argument to the constructor.
 
 #### v.cid
 
