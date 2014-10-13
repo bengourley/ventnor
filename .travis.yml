@@ -1,8 +1,8 @@
 language: node_js
 node_js:
 - '0.10'
-script: 'npm run browser-test'
+script: npm run browser-test
 env:
   global:
-  - secure: mv3MQY46AgBMzO4TwZOBkz6a51DyoH8D6jxOtrv0YbaDbzQj5H98GCZL70ayhfUwm+F8w1IzKNWl7fWGVe0VCv47VAKOHT4qXhk0x0tJGyFlD5mzueieaXVOGdxdafA5FXjlKO3e3xnrEJKVjYNJVBhtris6i84gGt7hodWs+pI=
-  - secure: PDHYS64or40h6dagSyubXKEghYFzvMAX5Dby2IhApEbet65WY0dfSvfZkg7rWootikVhitx3AS/Gkhzyimfg11o8VSzdgw3LTy0mu6HbKLrEuNUiuEoiC4tM3J18VEXbqVkET3Jw+7p3ikytHZsGfXLe+ch31y9v9ZNPtIigtyU=
+  - secure: 0W+LU2bxEnEFBkidlGQTDVY1rFjA6r521Ha+1Zq491w3vooMG4hs1v9vT4xD96KaYhs5rfQbsBzEAshGdxTC5pIFNM0RLJJXIp9xgYsm5bsMYr5rRbzIE8oIiqNUPWtd3ZDwEqtMRal0e0t+qlLJVT2L0VoQWiODIwZP9oSZg0w=
+  - secure: rvFa/cvPPD9YFW/lvdf/qkU3iGQC/7eJTjOgk/1aCXErWaYvOsdRbgeO6DkwkzWjWcTWWX4BPPDELsNjm8mqcEQGylR/xrK2GOVS92MHZzZSn+woOOn1TOC+yeBaEothKcpA05pmvGf9JbDjWVTbgVJUQw7hcRy/Xv+ezXGOxi4=
