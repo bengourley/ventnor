@@ -1,4 +1,9 @@
 language: node_js
 node_js:
-  - "0.11"
-  - "0.10"
+- '0.11'
+- '0.10'
+script: 'npm run browser-test'
+env:
+  global:
+  - secure: mv3MQY46AgBMzO4TwZOBkz6a51DyoH8D6jxOtrv0YbaDbzQj5H98GCZL70ayhfUwm+F8w1IzKNWl7fWGVe0VCv47VAKOHT4qXhk0x0tJGyFlD5mzueieaXVOGdxdafA5FXjlKO3e3xnrEJKVjYNJVBhtris6i84gGt7hodWs+pI=
+  - secure: PDHYS64or40h6dagSyubXKEghYFzvMAX5Dby2IhApEbet65WY0dfSvfZkg7rWootikVhitx3AS/Gkhzyimfg11o8VSzdgw3LTy0mu6HbKLrEuNUiuEoiC4tM3J18VEXbqVkET3Jw+7p3ikytHZsGfXLe+ch31y9v9ZNPtIigtyU=
