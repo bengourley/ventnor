@@ -138,7 +138,7 @@ ClockView.prototype = Object.create(View.prototype)
 
 // By convention, view instances normally implement
 // a render function which populates their DOM element
-ClockView.prototype.render() = function () {
+ClockView.prototype.render = function () {
   this.el.textContent = new Date()).toString()
 }
 ```
